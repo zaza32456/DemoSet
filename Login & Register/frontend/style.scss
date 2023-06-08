@@ -30,6 +30,10 @@ body {
   text-shadow: 0.5px 0.5px 1px;
 }
 
+@mixin smallFontShadow {
+  text-shadow: 0.2px 0.2px 2px;
+}
+
 #app {
   color: var(--primary-color);
   width: 100%;
@@ -55,6 +59,7 @@ body {
 .info {
   @include flexCenter();
   flex-direction: column;
+  gap: 1rem;
 }
 
 label {
@@ -72,4 +77,51 @@ input {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
   @include fontShadow();
+}
+
+input:focus {
+  border-style: dashed;
+  outline: none;
+}
+
+.login-btn,
+.register-btn {
+  font-size: 2rem;
+  border: 2px solid;
+  padding: 0 3rem;
+  border-radius: .5rem;
+  @include flexCenter();
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 2px 2px 5px;
+}
+
+.login-btn {
+  height: 7rem;
+}
+
+.register-btn {
+  height: 11rem;
+}
+
+.login-btn:active,
+.register-btn:active {
+  box-shadow: inset 0px 0px 3px;
+}
+
+.to-login,
+.to-register {
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.to-login-btn,
+.to-register-btn {
+  display: inline-block;
+  cursor: pointer;
+  font-style: normal;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 0 .5rem;
+  @include smallFontShadow;
 }
