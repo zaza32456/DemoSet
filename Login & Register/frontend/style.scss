@@ -124,4 +124,25 @@ input:focus {
   border-radius: 2px;
   padding: 0 .5rem;
   @include smallFontShadow;
+  user-select: none;
+  transform-origin: right bottom;
+}
+
+.to-login-btn:active,
+.to-register-btn:active {
+  transform: perspective(5000px) rotateX(30deg) rotateY(-17.8deg) rotateZ(10deg);
+}
+
+input.error {
+   border-color: red;
+}
+
+.welcome {
+  display: none;
+  flex-direction: column;
+  font-size: 6rem;
+}
+
+.register {
+  display: none;
 }
